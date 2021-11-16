@@ -1,4 +1,8 @@
-
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package filters;
 
 import java.io.IOException;
@@ -11,19 +15,20 @@ import javax.servlet.FilterConfig;
 import javax.servlet.ServletException;
 import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
-import javax.servlet.annotation.WebFilter;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-@WebFilter(filterName = "AdminFIlter", servletNames = {"AdminServlet"})
-public class AdminFIlter implements Filter {
+/**
+ *
+ * @author 821320
+ */
+public class AdminFilter implements Filter {
 
     
 
     @Override
     public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
-        
         //any code before chain.doFilter will be executed before servlet is loaded
         HttpServletRequest httpRequest = (HttpServletRequest) request;
         
@@ -44,12 +49,12 @@ public class AdminFIlter implements Filter {
         //any code after chain.doFilter will be executed after the servlet
     }
 
+    
     @Override
     public void init(FilterConfig filterConfig) throws ServletException {}
-    
     @Override
     public void destroy() {}
     
-   
+  
     
 }
